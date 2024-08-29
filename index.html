@@ -1,0 +1,321 @@
+<html><head><base href="https://websimx.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>QtexSignal Insights Pro - Ultra-Accurate Currency Pair Signals</title>
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0a0e17;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  background: #1a2332;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,120,255,0.2);
+  text-align: center;
+  max-width: 90vw;
+  position: relative;
+}
+h1 {
+  color: #00a8ff;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.login-form {
+  background: #233247;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.login-form input {
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background: #1a2332;
+  color: #e0e0e0;
+}
+.login-form button {
+  background: #00a8ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.signal-box {
+  background: #233247;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+.signal-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0,168,255,0.1), rgba(0,225,255,0.1));
+}
+.currency-pair {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.signal {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.accuracy {
+  font-size: 16px;
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+.timer {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.confidence {
+  font-size: 14px;
+  color: #ffd700;
+  margin-top: 10px;
+}
+.disclaimer {
+  font-size: 10px;
+  color: #7a8ca5;
+  margin-top: 20px;
+}
+.links a {
+  color: #00a8ff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #233247;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.download-app {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #00a8ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.download-app:hover {
+  background: #0086cc;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>QtexSignal Insights Pro: Ultra-Accurate Signals</h1>
+  
+  <div class="login-form">
+    <input type="text" id="accessCode" placeholder="Enter your access code">
+    <button onclick="login()">Log In</button>
+    <p>Please request your access <a href="https://pay-link.s3.us-west-2.amazonaws.com/index.html?uid=60c6e2b5a5284c1a" style="color: #00ff88; font-weight: bold;">HERE</a></p>
+  </div>
+
+  <div class="signal-box">
+    <div class="currency-pair">USD/ARS (OTC)</div>
+    <div class="signal">UP</div>
+    <div class="accuracy">98.7% Accuracy</div>
+    <div class="timer">Signal valid for: 04:57</div>
+    <div class="confidence">Confidence Level: Very High</div>
+  </div>
+  <p>Next signal update in: 04:03</p>
+  <p class="disclaimer">Disclaimer: While our AI models achieve exceptionally high accuracy, all trading carries inherent risks. Past performance does not guarantee future results. Use this information responsibly and in conjunction with comprehensive market analysis.</p>
+  <div class="links">
+    <a href="#" onclick="showModal('about')">About QtexSignal Insights Pro</a> | 
+    <a href="#" onclick="showModal('methodology')">Our AI Methodology</a> | 
+    <a href="#" onclick="showModal('risk')">Risk Management</a>
+  </div>
+  
+  <a href="https://apk.e-droid.net/apk/app3206732-r50niv.apk?v=1" class="download-app" download>Download App</a>
+</div>
+
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('about')">×</span>
+    <h2>About QtexSignal Insights Pro</h2>
+    <p>QtexSignal Insights Pro is your gateway to unparalleled success in Quotex and forex trading. Our cutting-edge AI-powered platform delivers ultra-accurate signals that have helped countless traders achieve significant profits. With a proven track record of over 98% accuracy, we're not just predicting the market – we're reshaping the future of trading.</p>
+    <p>Join the elite group of traders who have transformed their trading journey with QtexSignal Insights Pro. Don't miss out on this opportunity to elevate your trading game and secure your financial future. Get started today and experience the power of precision trading!</p>
+  </div>
+</div>
+
+<div id="methodologyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('methodology')">×</span>
+    <h2>Our AI Methodology</h2>
+    <p>At QtexSignal Insights Pro, we harness the power of advanced artificial intelligence and machine learning algorithms to analyze vast amounts of market data in real-time. Our proprietary AI models consider multiple factors, including:</p>
+    <ul>
+      <li>Historical price patterns</li>
+      <li>Market sentiment analysis</li>
+      <li>Economic indicators</li>
+      <li>Geopolitical events</li>
+      <li>Technical analysis</li>
+    </ul>
+    <p>By synthesizing this complex data, our AI generates highly accurate trading signals, giving you a significant edge in the market. Our continuous learning systems ensure that our models evolve with the market, maintaining our exceptional accuracy rate.</p>
+  </div>
+</div>
+
+<div id="riskModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('risk')">×</span>
+    <h2>Risk Management</h2>
+    <p>While QtexSignal Insights Pro provides highly accurate signals, responsible trading is crucial for long-term success. We recommend the following risk management strategies:</p>
+    <ul>
+      <li>Never invest more than you can afford to lose</li>
+      <li>Use stop-loss orders to limit potential losses</li>
+      <li>Diversify your trading portfolio</li>
+      <li>Start with smaller trades and scale up gradually</li>
+      <li>Continuously educate yourself about the market</li>
+    </ul>
+    <p>Remember, even with our high accuracy rate, no trading system is 100% guaranteed. Always trade responsibly and within your means. QtexSignal Insights Pro is a powerful tool, but your judgment and risk management are key to your trading success.</p>
+  </div>
+</div>
+
+<script>
+let signalTime = 297;
+let nextUpdate = 243;
+let accuracyRate = 98.7;
+let confidenceLevels = ['Very High', 'High', 'Moderate'];
+let confidenceIndex = 0;
+let isLoggedIn = false;
+const correctAccessCode = '1UG9JN';
+
+function login() {
+  const accessCode = document.getElementById('accessCode').value;
+  if (accessCode === correctAccessCode) {
+    isLoggedIn = true;
+    document.querySelector('.login-form').style.display = 'none';
+    document.querySelector('.signal-box').style.display = 'block';
+    document.querySelector('.download-app').style.display = 'block';
+    localStorage.setItem('loginTime', Date.now());
+  } else {
+    alert('Incorrect access code. Please try again.');
+  }
+}
+
+function checkLoginStatus() {
+  const loginTime = localStorage.getItem('loginTime');
+  if (loginTime) {
+    const currentTime = Date.now();
+    const daysSinceLogin = (currentTime - loginTime) / (1000 * 60 * 60 * 24);
+    if (daysSinceLogin > 7) {
+      localStorage.removeItem('loginTime');
+      isLoggedIn = false;
+      document.querySelector('.login-form').style.display = 'block';
+      document.querySelector('.signal-box').style.display = 'none';
+      document.querySelector('.download-app').style.display = 'none';
+    } else {
+      isLoggedIn = true;
+      document.querySelector('.login-form').style.display = 'none';
+      document.querySelector('.signal-box').style.display = 'block';
+      document.querySelector('.download-app').style.display = 'block';
+    }
+  }
+}
+
+function updateTimers() {
+  if (!isLoggedIn) return;
+  
+  signalTime--;
+  nextUpdate--;
+  
+  document.querySelector('.timer').textContent = `Signal valid for: ${String(Math.floor(signalTime / 60)).padStart(2, '0')}:${String(signalTime % 60).padStart(2, '0')}`;
+  document.querySelector('p').textContent = `Next signal update in: ${String(Math.floor(nextUpdate / 60)).padStart(2, '0')}:${String(nextUpdate % 60).padStart(2, '0')}`;
+  
+  if (signalTime <= 0) {
+    updateSignal();
+  }
+  
+  if (nextUpdate <= 0) {
+    nextUpdate = 300 + Math.floor(Math.random() * 120); // Reset to 5-7 minutes
+  }
+}
+
+function updateSignal() {
+  const signals = ['UP', 'DOWN'];
+  const newSignal = signals[Math.floor(Math.random() * signals.length)];
+  document.querySelector('.signal').textContent = newSignal;
+  signalTime = 300 + Math.floor(Math.random() * 180); // Reset to 5-8 minutes
+  
+  // Update accuracy within 95-99% range
+  accuracyRate = (95 + Math.random() * 4).toFixed(1);
+  document.querySelector('.accuracy').textContent = `${accuracyRate}% Accuracy`;
+  
+  // Cycle through confidence levels
+  confidenceIndex = (confidenceIndex + 1) % confidenceLevels.length;
+  document.querySelector('.confidence').textContent = `Confidence Level: ${confidenceLevels[confidenceIndex]}`;
+}
+
+function showModal(type) {
+  document.getElementById(`${type}Modal`).style.display = 'block';
+}
+
+function closeModal(type) {
+  document.getElementById(`${type}Modal`).style.display = 'none';
+}
+
+window.onclick = function(event) {
+  if (event.target.className === 'modal') {
+    event.target.style.display = 'none';
+  }
+}
+
+checkLoginStatus();
+setInterval(updateTimers, 1000);
+setInterval(checkLoginStatus, 60000); // Check login status every minute
+</script>
+
+</body></html>
