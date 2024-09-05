@@ -1,9 +1,12 @@
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>QtexSignal Insights Pro - Ultra-Accurate Currency Pair Signals</title>
+<html><head><base href="https://qtexsignal.pro/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QtexSignal Insights Pro - Ultra-Accurate Currency Pair Signals</title>
 <style>
 body {
   font-family: 'Roboto', sans-serif;
   background: #0a0e17;
-  color: #e0e0e0;
+  color: #f0f0f0; /* Lightened from #e0e0e0 */
   margin: 0;
   padding: 10px;
   display: flex;
@@ -12,7 +15,7 @@ body {
   min-height: 100vh;
 }
 .container {
-  background: #1a2332;
+  background: #1c2638; /* Slightly lightened */
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0,120,255,0.2);
@@ -26,7 +29,7 @@ h1 {
   font-size: 24px;
 }
 .login-form {
-  background: #233247;
+  background: #283856; /* Slightly lightened */
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
@@ -37,8 +40,8 @@ h1 {
   margin: 10px 0;
   border: none;
   border-radius: 5px;
-  background: #1a2332;
-  color: #e0e0e0;
+  background: #1c2638; /* Slightly lightened */
+  color: #f0f0f0; /* Lightened */
 }
 .login-form button {
   background: #00a8ff;
@@ -49,7 +52,7 @@ h1 {
   cursor: pointer;
 }
 .signal-box {
-  background: #233247;
+  background: #283856; /* Slightly lightened */
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
@@ -78,7 +81,7 @@ h1 {
 }
 .accuracy {
   font-size: 16px;
-  color: #00ff88;
+  color: #00ff99; /* Slightly lightened */
   margin-bottom: 10px;
 }
 .timer {
@@ -87,12 +90,12 @@ h1 {
 }
 .confidence {
   font-size: 14px;
-  color: #ffd700;
+  color: #ffdd33; /* Slightly lightened */
   margin-top: 10px;
 }
 .disclaimer {
   font-size: 10px;
-  color: #7a8ca5;
+  color: #9db3d1; /* Lightened */
   margin-top: 20px;
 }
 .links a {
@@ -115,7 +118,7 @@ h1 {
   background-color: rgba(0,0,0,0.4);
 }
 .modal-content {
-  background-color: #233247;
+  background-color: #283856; /* Slightly lightened */
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -124,7 +127,7 @@ h1 {
   border-radius: 10px;
 }
 .close {
-  color: #aaa;
+  color: #ccc; /* Lightened */
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -153,6 +156,55 @@ h1 {
 .download-app:hover {
   background: #0086cc;
 }
+.testimonial-slider {
+  background: #283856;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.testimonial-heading {
+  color: #00a8ff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.testimonial-content img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.testimonial-controls {
+  margin-top: 15px;
+}
+.testimonial-controls button {
+  background: #00a8ff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pagination button {
+  background: #00a8ff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.page-indicator {
+  color: #00a8ff;
+  font-size: 16px;
+  margin-top: 10px;
+}
 </style>
 </head>
 <body>
@@ -178,6 +230,20 @@ h1 {
     <a href="#" onclick="showModal('about')">About QtexSignal Insights Pro</a> | 
     <a href="#" onclick="showModal('methodology')">Our AI Methodology</a> | 
     <a href="#" onclick="showModal('risk')">Risk Management</a>
+  </div>
+  
+  <div class="testimonial-slider">
+    <h2 class="testimonial-heading">Success Stories</h2>
+    <div class="testimonial-content">
+      <img id="testimonial-image" alt="Testimonial" width="100" height="100">
+      <h3 id="testimonial-name"></h3>
+      <p id="testimonial-text"></p>
+      <p><strong id="testimonial-profit"></strong></p>
+    </div>
+    <div class="testimonial-controls">
+      <button onclick="changeTestimonial(-1)">Previous</button>
+      <button onclick="changeTestimonial(1)">Next</button>
+    </div>
   </div>
   
   <a href="https://apk.e-droid.net/apk/app3206732-r50niv.apk?v=1" class="download-app" download>Download App</a>
@@ -232,6 +298,70 @@ let confidenceLevels = ['Very High', 'High', 'Moderate'];
 let confidenceIndex = 0;
 let isLoggedIn = false;
 const correctAccessCode = '1UG9JN';
+let currentTestimonialIndex = 0;
+
+const testimonials = [
+  {
+    name: "Sarah Thompson",
+    image: "https://qtexsignal.pro/testimonial-images/sarah-thompson.jpg",
+    text: "QtexSignal Insights Pro has been a game-changer for my trading career. The accuracy of their signals is truly remarkable. I've seen a 300% increase in my profits since I started using this tool!",
+    profit: "$15,750"
+  },
+  {
+    name: "Michael Chen",
+    image: "https://qtexsignal.pro/testimonial-images/michael-chen.jpg",
+    text: "I was skeptical at first, but QtexSignal Insights Pro has exceeded all my expectations. The AI-powered signals have helped me make consistently profitable trades. It's worth every penny!",
+    profit: "$8,920"
+  },
+  {
+    name: "Emily Rodriguez",
+    image: "https://qtexsignal.pro/testimonial-images/emily-rodriguez.jpg",
+    text: "As a beginner trader, QtexSignal Insights Pro has been invaluable. The signals are easy to understand and implement. I've gone from struggling to make profits to seeing consistent gains.",
+    profit: "$5,630"
+  },
+  {
+    name: "David Patel",
+    image: "https://qtexsignal.pro/testimonial-images/david-patel.jpg",
+    text: "I've tried many signal services, but none come close to the accuracy of QtexSignal Insights Pro. It's like having a team of expert analysts working for you 24/7. Highly recommended!",
+    profit: "$22,400"
+  },
+  {
+    name: "Olivia Wilson",
+    image: "https://qtexsignal.pro/testimonial-images/olivia-wilson.jpg",
+    text: "QtexSignal Insights Pro has given me the confidence to trade in volatile markets. The AI's ability to predict market movements is truly impressive. My trading account has never looked better!",
+    profit: "$11,280"
+  },
+  {
+    name: "James Lee",
+    image: "https://qtexsignal.pro/testimonial-images/james-lee.jpg",
+    text: "I was close to giving up on trading before I discovered QtexSignal Insights Pro. Now, I'm consistently profitable and have even quit my day job to trade full-time. This tool is a must-have!",
+    profit: "$31,500"
+  },
+  {
+    name: "Sophie Martin",
+    image: "https://qtexsignal.pro/testimonial-images/sophie-martin.jpg",
+    text: "The accuracy of QtexSignal Insights Pro is unmatched. I've been using it for 6 months now, and my win rate has increased dramatically. It's like having a crystal ball for the markets!",
+    profit: "$9,750"
+  },
+  {
+    name: "Carlos Fernandez",
+    image: "https://qtexsignal.pro/testimonial-images/carlos-fernandez.jpg",
+    text: "As a busy professional, I don't have time to analyze markets all day. QtexSignal Insights Pro does the heavy lifting for me, allowing me to make profitable trades in my spare time. It's a fantastic tool!",
+    profit: "$7,820"
+  },
+  {
+    name: "Aisha Khan",
+    image: "https://qtexsignal.pro/testimonial-images/aisha-khan.jpg",
+    text: "I was hesitant to invest in another trading tool, but QtexSignal Insights Pro has proven its worth many times over. The signals are reliable, and the customer support is excellent. I'm a happy user!",
+    profit: "$13,600"
+  },
+  {
+    name: "Thomas Brown",
+    image: "https://qtexsignal.pro/testimonial-images/thomas-brown.jpg",
+    text: "QtexSignal Insights Pro has transformed my approach to trading. The AI-powered signals have helped me identify opportunities I would have missed otherwise. My trading results speak for themselves!",
+    profit: "$18,930"
+  }
+];
 
 function login() {
   const accessCode = document.getElementById('accessCode').value;
@@ -241,6 +371,7 @@ function login() {
     document.querySelector('.signal-box').style.display = 'block';
     document.querySelector('.download-app').style.display = 'block';
     localStorage.setItem('loginTime', Date.now());
+    initializeTestimonials();
   } else {
     alert('Incorrect access code. Please try again.');
   }
@@ -262,6 +393,7 @@ function checkLoginStatus() {
       document.querySelector('.login-form').style.display = 'none';
       document.querySelector('.signal-box').style.display = 'block';
       document.querySelector('.download-app').style.display = 'block';
+      initializeTestimonials();
     }
   }
 }
@@ -311,6 +443,30 @@ window.onclick = function(event) {
   if (event.target.className === 'modal') {
     event.target.style.display = 'none';
   }
+}
+
+function initializeTestimonials() {
+  renderTestimonial();
+  setInterval(rotateTestimonial, 10000); // Rotate every 10 seconds
+}
+
+function renderTestimonial() {
+  const testimonial = testimonials[currentTestimonialIndex];
+  document.getElementById('testimonial-image').src = testimonial.image;
+  document.getElementById('testimonial-image').alt = testimonial.name;
+  document.getElementById('testimonial-name').textContent = testimonial.name;
+  document.getElementById('testimonial-text').textContent = testimonial.text;
+  document.getElementById('testimonial-profit').textContent = `Profit: ${testimonial.profit}`;
+}
+
+function rotateTestimonial() {
+  currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+  renderTestimonial();
+}
+
+function changeTestimonial(direction) {
+  currentTestimonialIndex = (currentTestimonialIndex + direction + testimonials.length) % testimonials.length;
+  renderTestimonial();
 }
 
 checkLoginStatus();
