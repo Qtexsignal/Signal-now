@@ -173,6 +173,8 @@ h1 {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #00a8ff;
 }
 .testimonial-controls {
   margin-top: 15px;
@@ -303,61 +305,61 @@ let currentTestimonialIndex = 0;
 const testimonials = [
   {
     name: "Sarah Thompson",
-    image: "https://qtexsignal.pro/testimonial-images/sarah-thompson.jpg",
+    image: "https://randomuser.me/api/portraits/women/1.jpg",
     text: "QtexSignal Insights Pro has been a game-changer for my trading career. The accuracy of their signals is truly remarkable. I've seen a 300% increase in my profits since I started using this tool!",
     profit: "$15,750"
   },
   {
     name: "Michael Chen",
-    image: "https://qtexsignal.pro/testimonial-images/michael-chen.jpg",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
     text: "I was skeptical at first, but QtexSignal Insights Pro has exceeded all my expectations. The AI-powered signals have helped me make consistently profitable trades. It's worth every penny!",
     profit: "$8,920"
   },
   {
     name: "Emily Rodriguez",
-    image: "https://qtexsignal.pro/testimonial-images/emily-rodriguez.jpg",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
     text: "As a beginner trader, QtexSignal Insights Pro has been invaluable. The signals are easy to understand and implement. I've gone from struggling to make profits to seeing consistent gains.",
     profit: "$5,630"
   },
   {
     name: "David Patel",
-    image: "https://qtexsignal.pro/testimonial-images/david-patel.jpg",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
     text: "I've tried many signal services, but none come close to the accuracy of QtexSignal Insights Pro. It's like having a team of expert analysts working for you 24/7. Highly recommended!",
     profit: "$22,400"
   },
   {
     name: "Olivia Wilson",
-    image: "https://qtexsignal.pro/testimonial-images/olivia-wilson.jpg",
+    image: "https://randomuser.me/api/portraits/women/5.jpg",
     text: "QtexSignal Insights Pro has given me the confidence to trade in volatile markets. The AI's ability to predict market movements is truly impressive. My trading account has never looked better!",
     profit: "$11,280"
   },
   {
     name: "James Lee",
-    image: "https://qtexsignal.pro/testimonial-images/james-lee.jpg",
+    image: "https://randomuser.me/api/portraits/men/6.jpg",
     text: "I was close to giving up on trading before I discovered QtexSignal Insights Pro. Now, I'm consistently profitable and have even quit my day job to trade full-time. This tool is a must-have!",
     profit: "$31,500"
   },
   {
     name: "Sophie Martin",
-    image: "https://qtexsignal.pro/testimonial-images/sophie-martin.jpg",
+    image: "https://randomuser.me/api/portraits/women/7.jpg",
     text: "The accuracy of QtexSignal Insights Pro is unmatched. I've been using it for 6 months now, and my win rate has increased dramatically. It's like having a crystal ball for the markets!",
     profit: "$9,750"
   },
   {
     name: "Carlos Fernandez",
-    image: "https://qtexsignal.pro/testimonial-images/carlos-fernandez.jpg",
+    image: "https://randomuser.me/api/portraits/men/8.jpg",
     text: "As a busy professional, I don't have time to analyze markets all day. QtexSignal Insights Pro does the heavy lifting for me, allowing me to make profitable trades in my spare time. It's a fantastic tool!",
     profit: "$7,820"
   },
   {
     name: "Aisha Khan",
-    image: "https://qtexsignal.pro/testimonial-images/aisha-khan.jpg",
+    image: "https://randomuser.me/api/portraits/women/9.jpg",
     text: "I was hesitant to invest in another trading tool, but QtexSignal Insights Pro has proven its worth many times over. The signals are reliable, and the customer support is excellent. I'm a happy user!",
     profit: "$13,600"
   },
   {
     name: "Thomas Brown",
-    image: "https://qtexsignal.pro/testimonial-images/thomas-brown.jpg",
+    image: "https://randomuser.me/api/portraits/men/10.jpg",
     text: "QtexSignal Insights Pro has transformed my approach to trading. The AI-powered signals have helped me identify opportunities I would have missed otherwise. My trading results speak for themselves!",
     profit: "$18,930"
   }
@@ -452,8 +454,12 @@ function initializeTestimonials() {
 
 function renderTestimonial() {
   const testimonial = testimonials[currentTestimonialIndex];
-  document.getElementById('testimonial-image').src = testimonial.image;
-  document.getElementById('testimonial-image').alt = testimonial.name;
+  const img = document.getElementById('testimonial-image');
+  img.src = testimonial.image;
+  img.alt = testimonial.name;
+  img.onerror = function() {
+    this.src = 'https://via.placeholder.com/100x100.png?text=Profile';
+  };
   document.getElementById('testimonial-name').textContent = testimonial.name;
   document.getElementById('testimonial-text').textContent = testimonial.text;
   document.getElementById('testimonial-profit').textContent = `Profit: ${testimonial.profit}`;
